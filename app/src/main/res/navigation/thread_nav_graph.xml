@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/thread_nav_graph"
+    app:startDestination="@id/threadListFragment">
+
+    <fragment
+        android:id="@+id/threadListFragment"
+        android:name="app.seven.branchcx.modules.messaging.ui.thread_list.MessagingThreadListFragment"
+        android:label="messaging_thread_list_fragment"
+        tools:layout="@layout/messaging_thread_list_fragment" >
+        <action
+            android:id="@+id/action_threadListFragment_to_threadDetailsFragment"
+            app:destination="@id/threadDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/threadDetailsFragment"
+        android:name="app.seven.branchcx.modules.messaging.ui.thread_details.ThreadDetailsFragment"
+        android:label="messaging_thread_details_fragment"
+        tools:layout="@layout/messaging_thread_details_fragment" >
+        <argument
+            android:name="threadId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </fragment>
+</navigation>
